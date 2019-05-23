@@ -54,7 +54,7 @@ Package/vsftpd-tls/conffiles=$(Package/vsftpd/conffiles)
 ifneq ($(CONFIG_USE_MUSL),)
   NLSSTRING:=-lcrypt
 else
-  NLSSTRING:=-lcrypt -lnsl
+  NLSSTRING:=-lcrypt
 endif
 
 TARGET_CFLAGS += -D_GNU_SOURCE -include fcntl.h
