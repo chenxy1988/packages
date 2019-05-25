@@ -12,7 +12,7 @@ PKG_VERSION:=4.2.8p13
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/
+PKG_SOURCE_URL:=http://distfiles.macports.org/ntp/
 PKG_HASH:=288772cecfcd9a53694ffab108d1825a31ba77f3a8466b0401baeca3bc232a38
 
 PKG_LICENSE:=Unique
