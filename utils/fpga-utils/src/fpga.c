@@ -226,6 +226,12 @@ main (int argc, char **argv)
 		exit(1);
 	}
 	req_addr = strtoul(argv[optind], &endptr, 0);
+#ifdef CONFIG_XILINX_BMU_PROJECT
+#define ZYNQ_BASE_ADDR 0x40000000
+	req_addr = ZYNQ_BASE_ADDR + (req_addr * 4);
+	if (verbose)
+		fprintf(stderr,"Current request address is 0x%x \n",req_addr);
+#endif
 	if (*endptr) {
 		fprintf(stderr, "Bad <addr> value '%s'\n", argv[optind]);
 		exit(1);

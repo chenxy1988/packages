@@ -24,6 +24,10 @@ define Package/fpga-utils/description
 	It can be useful to access hardware for which no device driver exists!
 endef
 
+ifdef CONFIG_TARGET_zynq_DEVICE_xlnx_zynq-bms
+	TARGET_CFLAGS += -DCONFIG_XILINX_BMU_PROJECT
+endif
+
 define Build/Compile
 	$(TARGET_CC) $(TARGET_CFLAGS) -Wall $(PKG_BUILD_DIR)/fpga.c -o $(PKG_BUILD_DIR)/$(PKG_NAME)
 endef
