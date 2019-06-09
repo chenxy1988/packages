@@ -36,12 +36,21 @@ usage (char *argv0)
 "    <val>      The value to write (implies -w)\n\n"
 "    Xilinx ZYNQ FPGA base address is 0x40000000 \n"
 "Examples:\n"
+#ifdef CONFIG_XILINX_BMU_PROJECT
+"   Read data from a FPGA address:\n"
+"   %s -r -4 0x5           Reads 4 bytes from 0x40000014\n"
+"   %s -r -l 4 0x5         Reads 4 bytes from 0x40000014, show in per byte\n"
+"   %s -r 0x5	        Read one byte from 0x40000041\n"
+"   Write data to FPGA address: \n"
+"   %s -w -4 0x1 0xaaffaaff     Write 0xaaffaaff to 0x40000004 \n"
+#else
 "    Read data from special addrss :\n"
 "    %s 0x40000000              Reads one byte from 0x40000000\n"
 "    %s -l 4 0x40000000         Reads 4 bytes from 0x40000000,show in per byte\n"
 "    %s -4 0x40000000           Reads 4 bytes from 0x40000000\n"
 "    Write data to speical address: \n"
 "    %s -4 0x40000000  0xa1a2a3a4 Write 0xa1a2a3a4 to 0x40000000\n"
+#endif
 "\n",
 		argv0, argv0, argv0, argv0);
 	exit(1);
