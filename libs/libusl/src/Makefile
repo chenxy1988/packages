@@ -22,6 +22,8 @@ all:			libusl.a
 
 test:			libusl.a usl_test
 
+demo:			libusl.a demo
+
 libusl.a:		$(USL_SRCS.o)
 			$(AR) rus $@ $^
 
